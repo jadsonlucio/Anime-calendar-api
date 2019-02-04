@@ -1,12 +1,24 @@
 package com.animeCalendar.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class Episode {
     @OneToOne
+    @JsonIgnoreProperties("episodes")
     private Anime anime;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -89,5 +101,11 @@ public class Episode {
 
     public void setAnime(Anime anime){ this.anime = anime; }
 
-    public Anime getAnime(){ return this.anime; }
+    public Anime anime(){
+        return this.anime;
+    }
+
+    public void watch(EpisodeWatch episodeWatch){
+        this.numberViews++;
+    }
 }

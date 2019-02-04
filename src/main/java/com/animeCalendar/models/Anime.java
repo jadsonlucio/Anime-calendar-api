@@ -1,5 +1,7 @@
 package com.animeCalendar.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,10 +10,10 @@ import java.util.List;
 @Entity
 public class Anime {
 
-    @ManyToMany(mappedBy = "animes")
+    @ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
     private List<Genre> genres;
 
-    @OneToMany(mappedBy = "anime")
+    @OneToMany(mappedBy = "anime", cascade = CascadeType.ALL)
     private List<Episode> episodes;
 
 
@@ -20,6 +22,7 @@ public class Anime {
     private int id;
 
     private String mainName;
+    @Column(unique = true)
     private String name;
     private int numberEpisodes;
     private Date releaseDate;
@@ -28,11 +31,10 @@ public class Anime {
     private String status;
     private String studio;
     private int season;
-    private String genresNames;
 
     public Anime(){}
 
-    public Anime(String mainName, String name, String genresNames, int numberEpisodes, Date releaseDate, Date endingDate, String source, String status, String studio, int season) {
+    public Anime(String mainName, String name, int numberEpisodes, Date releaseDate, Date endingDate, String source, String status, String studio, int season) {
         this.genres = new ArrayList<Genre>();
         this.mainName = mainName;
         this.name = name;
@@ -43,7 +45,6 @@ public class Anime {
         this.status = status;
         this.studio = studio;
         this.season = season;
-        this.genresNames = genresNames;
 
     }
 
@@ -135,11 +136,24 @@ public class Anime {
         this.season = season;
     }
 
-    public void setGenresNames(String genresNames){ this.genresNames = genresNames; }
-
-    public String getGenresNames(){ return  this.genresNames; }
-
     public void setEpisodes(List<Episode> episodes){ this.episodes = episodes; }
 
     public List<Episode> getEpisodes(){ return this.episodes; }
+
+    public void addGenre(Genre genre){
+        if(this.getGenres() == null){
+            this.genres = new ArrayList<>();
+        }
+
+        this.getGenres().add(genre);
+    }
+
+    public ArrayList<Integer> getGendersIds(){
+        ArrayList<Integer> gendersIds = new ArrayList<>();
+        for(int cont=0;cont<this.getGenres().size();cont++){
+            gendersIds.add(this.genres.get(cont).getId());
+        }
+
+        return gendersIds;
+    }
 }

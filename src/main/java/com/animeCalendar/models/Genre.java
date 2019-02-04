@@ -1,17 +1,25 @@
 package com.animeCalendar.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Genre {
+    @JsonBackReference
     @ManyToMany
     @JoinTable
     private List<Anime> animes;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(unique = true)
     private String name;
+
     private String description;
 
     public Genre(){ }
@@ -44,5 +52,23 @@ public class Genre {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+
+    public void addAnime(Anime anime){
+        if(this.getAnimes() == null){
+            this.animes = new ArrayList<>();
+        }
+
+        this.getAnimes().add(anime);
+        anime.addGenre(this);
     }
 }

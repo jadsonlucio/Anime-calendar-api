@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "baaaf967-b513-4c09-85b0-3fbfdef61fcd",
+		"name": "Tests to spring boot animeCalendar api",
+		"description": "this doc contains all test methods of animeCalendarAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/user/all",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"all"
+					]
+				},
+				"description": "get all of register users."
+			},
+			"response": [
+				{
+					"name": "getAllUsers_1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/user/all",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 15:06:00 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"animesWatched\": [],\n        \"name\": \"jadson\",\n        \"email\": \"jadsonaluno@hotmail.com\",\n        \"age\": 10,\n        \"createdDate\": \"2019-02-04T03:00:00.000+0000\",\n        \"gender\": \"male\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/user/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				},
+				"description": "get an user by his id.\n\n/user/{user_id}"
+			},
+			"response": [
+				{
+					"name": "getUserById_1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/user/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 15:38:13 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"animesWatched\": [],\n    \"name\": \"jadson\",\n    \"email\": \"jadsonaluno@hotmail.com\",\n    \"age\": 10,\n    \"createdDate\": \"2019-02-04T03:00:00.000+0000\",\n    \"gender\": \"male\"\n}"
+				}
+			]
+		},
+		{
+			"name": "saveUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"age\":20,\n\t\"email\":\"jadsonaluno@hotmail.com\",\n\t\"gender\":\"male\",\n\t\"name\":\"jadson\"\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/user/save",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"save"
+					]
+				},
+				"description": "save user on database.\n\nBody : \n{\n\t\n\t\"nome\":\"Name\",\n\t\"email\":\"@email.com\",\n\t\"gender\":\"male\",\n\t\"age\":12,\n\t\"created_date\":\"Current date\"\n\t\n}"
+			},
+			"response": [
+				{
+					"name": "saveUser_1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"age\":20,\n\t\"email\":\"jadsonaluno@hotmail.com\",\n\t\"gender\":\"male\",\n\t\"name\":\"jadson\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/user/save",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"save"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://127.0.0.1:8080/user/save/2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 15:44:18 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "User saved with id of:2"
+				}
+			]
+		},
+		{
+			"name": "watchEpisode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/user/1/watch/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1",
+						"watch",
+						"1"
+					]
+				},
+				"description": "Save an episode watch to user.\n\n/user/{user_id}/watch/{episode_id}\n\nBody: {\n\t\n\t\"comment\":\"trash anime\",\n\t\"punctuation\":10,\n\t\"watchSource\":\"myanimelist\"\n\t\n}"
+			},
+			"response": [
+				{
+					"name": "watchEpisode_1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comment\":\"trash anime\",\n\t\"punctuation\":10,\n\t\"watchSource\":\"myanimelist\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/user/1/watch/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1",
+								"watch",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://127.0.0.1:8080/user/1/watch/1/12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 16:25:27 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "Episode o dia depois de amanhã watched by user with id:1"
+				}
+			]
+		},
+		{
+			"name": "getAllAnimes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/anime/all",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"anime",
+						"all"
+					]
+				},
+				"description": "get all anime in database."
+			},
+			"response": [
+				{
+					"name": "getAllAnimes_1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/anime/all",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"anime",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 16:23:34 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"genres\": [\n            {\n                \"id\": 1,\n                \"name\": \"Terror\",\n                \"description\": \"Causa medo\"\n            }\n        ],\n        \"episodes\": [\n            {\n                \"id\": 1,\n                \"title\": \"o dia depois de amanhã\",\n                \"releaseDate\": 100000,\n                \"durationMilliseconds\": 2000,\n                \"numberViews\": 0,\n                \"likes\": 0,\n                \"deslikes\": 0,\n                \"miniatureImageUrl\": \"releasing\"\n            }\n        ],\n        \"id\": 1,\n        \"mainName\": \"shokugeki\",\n        \"name\": \"shokugeki\",\n        \"numberEpisodes\": 22,\n        \"releaseDate\": \"2018-12-12T00:00:00.000+0000\",\n        \"endingDate\": \"2017-12-12T00:00:00.000+0000\",\n        \"source\": \"manga\",\n        \"status\": \"releasing\",\n        \"studio\": \"peirot\",\n        \"season\": 1,\n        \"gendersIds\": [\n            1\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getAnimeById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/anime/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"anime",
+						"1"
+					]
+				},
+				"description": "get anime by his id.\n\n/anime/{anime_id}"
+			},
+			"response": [
+				{
+					"name": "getAnimeById_1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/anime/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"anime",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 16:23:59 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"genres\": [\n        {\n            \"id\": 1,\n            \"name\": \"Terror\",\n            \"description\": \"Causa medo\"\n        }\n    ],\n    \"episodes\": [\n        {\n            \"id\": 1,\n            \"title\": \"o dia depois de amanhã\",\n            \"releaseDate\": 100000,\n            \"durationMilliseconds\": 2000,\n            \"numberViews\": 0,\n            \"likes\": 0,\n            \"deslikes\": 0,\n            \"miniatureImageUrl\": \"releasing\"\n        }\n    ],\n    \"id\": 1,\n    \"mainName\": \"shokugeki\",\n    \"name\": \"shokugeki\",\n    \"numberEpisodes\": 22,\n    \"releaseDate\": \"2018-12-12T00:00:00.000+0000\",\n    \"endingDate\": \"2017-12-12T00:00:00.000+0000\",\n    \"source\": \"manga\",\n    \"status\": \"releasing\",\n    \"studio\": \"peirot\",\n    \"season\": 1,\n    \"gendersIds\": [\n        1\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "saveAnime",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"mainName\":\"shokugeki\",\n    \"episodes\":[{\n    \"title\":\"o dia depois de amanhã\",\n    \"releaseDate\":100000,\n    \"durationMilliseconds\":2000,\n    \"numberViews\":0,\n    \"likes\":0,\n    \"deslikes\":0,\n    \"miniatureImageUrl\":\"releasing\"\n}],\n    \"name\":\"shokugeki\",\n    \"numberEpisodes\":22,\n    \"releaseDate\":\"2018-12-12\",\n    \"endingDate\":\"2017-12-12\",\n    \"source\":\"manga\",\n    \"status\":\"releasing\",\n    \"studio\":\"peirot\",\n    \"season\":1,\n    \"genres\":[{\n    \t\"id\": 1\n    }]\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/anime/save",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"anime",
+						"save"
+					]
+				},
+				"description": "Save anime in database.\n\n/anime/save\n\nBody:\n\n{\n\n    \"mainName\":\"Anime main name\",\n    \"episodes\":[\n    {\n    \"title\":\"o dia depois de amanhã\",\n    \"releaseDate\":100000,\n    \"durationMilliseconds\":2000,\n    \"numberViews\":0,\n    \"likes\":0,\n    \"deslikes\":0,\n    \"miniatureImageUrl\":\"releasing\"\n\t}],\n\t\n    \"name\":\"Anime season name\",\n    \"numberEpisodes\":22,\n    \"releaseDate\":\"2018-12-12\",\n    \"endingDate\":\"2017-12-12\",\n    \"source\":\"manga\",\n    \"status\":\"releasing\",\n    \"studio\":\"peirot\",\n    \"season\":1,\n    \"genres\":[{\n    \t\"id\": 1\n    }]\n}"
+			},
+			"response": [
+				{
+					"name": "saveAnime_1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"mainName\":\"shokugeki\",\n    \"episodes\":[{\n    \"title\":\"o dia depois de amanhã\",\n    \"releaseDate\":100000,\n    \"durationMilliseconds\":2000,\n    \"numberViews\":0,\n    \"likes\":0,\n    \"deslikes\":0,\n    \"miniatureImageUrl\":\"releasing\"\n}],\n    \"name\":\"shokugeki\",\n    \"numberEpisodes\":22,\n    \"releaseDate\":\"2018-12-12\",\n    \"endingDate\":\"2017-12-12\",\n    \"source\":\"manga\",\n    \"status\":\"releasing\",\n    \"studio\":\"peirot\",\n    \"season\":1,\n    \"genres\":[{\n    \t\"id\": 1\n    }]\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/anime/save",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"anime",
+								"save"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://127.0.0.1:8080/anime/save/1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 16:23:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "Anime shokugeki saved with id of:1"
+				}
+			]
+		},
+		{
+			"name": "saveEpisode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\"title\":\"the day\",\n\t\"releaseDate\":100000,\n\t\"durationMilliseconds\":2000,\n\t\"numberViews\":0,\n\t\"likes\":0,\n\t\"deslikes\":0,\n\t\"miniatureImageUrl\":\"releasing\"\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/anime/1/episode/save",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"anime",
+						"1",
+						"episode",
+						"save"
+					]
+				},
+				"description": "save episode to anime.\n\n/anime/{anime_id}/episode/save\n\nBody: {\n\n\t\"title\":\"the day\",\n    \"releaseDate\":100000,\n    \"durationMilliseconds\":2000,\n    \"numberViews\":0,\n    \"likes\":0,\n    \"deslikes\":0,\n    \"miniatureImageUrl\":\"releasing\"\n    \n}"
+			},
+			"response": [
+				{
+					"name": "saveEpisode_1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n\t\"title\":\"the day\",\n\t\"releaseDate\":100000,\n\t\"durationMilliseconds\":2000,\n\t\"numberViews\":0,\n\t\"likes\":0,\n\t\"deslikes\":0,\n\t\"miniatureImageUrl\":\"releasing\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/anime/1/episode/save",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"anime",
+								"1",
+								"episode",
+								"save"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://127.0.0.1:8080/anime/1/episode/save/2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 16:30:59 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "Episode of animeshokugeki saved with id of:2"
+				}
+			]
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "remove user from database.\n\n/user/{user_id}/delete"
+			},
+			"response": [
+				{
+					"name": "deleteUser_1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/user/1/delete",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 19:33:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "usuario com id 1 excluido"
+				}
+			]
+		},
+		{
+			"name": "deleteAnime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "remove anime from database.\n\n/anime/{anime_id}/delete"
+			},
+			"response": []
+		}
+	]
+}
