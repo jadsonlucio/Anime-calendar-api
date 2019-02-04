@@ -654,6 +654,84 @@
 					"body": "Episode of animeshokugeki saved with id of:2"
 				}
 			]
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "remove user from database.\n\n/user/{user_id}/delete"
+			},
+			"response": [
+				{
+					"name": "deleteUser_1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/user/1/delete",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Feb 2019 19:33:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "usuario com id 1 excluido"
+				}
+			]
+		},
+		{
+			"name": "deleteAnime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "remove anime from database.\n\n/anime/{anime_id}/delete"
+			},
+			"response": []
 		}
 	]
 }
