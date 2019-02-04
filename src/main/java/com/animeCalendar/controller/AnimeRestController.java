@@ -61,6 +61,21 @@ public class AnimeRestController {
         return ResponseEntity.created(uri).body("Episode of anime" + anime.getName() + " saved with id of:" + savedEpisode.getId());
     }
 
+    @DeleteMapping("/anime/{anime_id}/delete")
+    @ResponseBody
+    public String deleteUser(@PathVariable int anime_id){
+        Optional<Anime> optionalUser = animeDatabase.findById(anime_id);
+
+        if(optionalUser.isPresent()){
+            Anime user = optionalUser.get();
+            animeDatabase.delete(user);
+
+            return "anime com id "+ anime_id+" excluido";
+        }else{
+            return "anime com id "+ anime_id + " não existe";
+        }
+
+    }
 
 
     /** Data manipulation methods **/

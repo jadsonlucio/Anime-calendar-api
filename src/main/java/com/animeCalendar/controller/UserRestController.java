@@ -89,4 +89,21 @@ public class UserRestController {
         return ResponseEntity.created(uri).body("Episode " +episode.getTitle()+" watched by user with id:" + user.getId());
     }
 
+
+    @DeleteMapping("/user/{user_id}/delete")
+    @ResponseBody
+    public String deleteUser(@PathVariable int user_id){
+        Optional<User> optionalUser = userDatabase.findById(user_id);
+
+        if(optionalUser.isPresent()){
+            User user = optionalUser.get();
+            userDatabase.delete(user);
+
+            return "usuario com id "+ user_id+" excluido";
+        }else{
+            return "usuario com id"+ user_id + " não existe";
+        }
+
+    }
+
 }

@@ -34,4 +34,6 @@ public class AnimeWatchKey implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
+
 }
