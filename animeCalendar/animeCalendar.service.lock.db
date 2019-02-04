@@ -1,5 +1,9 @@
 #FileLock
+<<<<<<< HEAD
 #Mon Feb 04 13:12:26 BRT 2019
+=======
+#Mon Feb 04 13:36:31 BRT 2019
+>>>>>>> 9e616a0cb374a0cbdce169ecaaee445a9441dc80
 hostName=ara-compaq8100
 id=168b9483eff1a5f1ea165b04ea1301be6feb65db944
 method=file
