@@ -11,7 +11,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "animeWatchKey.user",cascade = CascadeType.ALL)
     private List<AnimeWatch> animesWatched;
 
     private String name;

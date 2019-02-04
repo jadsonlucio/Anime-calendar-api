@@ -1,6 +1,6 @@
 #FileLock
-#Sun Feb 03 22:54:58 BRST 2019
-server=192.168.0.105\:58427
-hostName=naruto-PC
+#Mon Feb 04 13:12:26 BRT 2019
+hostName=ara-compaq8100
+id=168b9483eff1a5f1ea165b04ea1301be6feb65db944
 method=file
-id=168b60041c77f0874e3bb76817d7f108b8eb59b757c
+server=127.0.1.1\:36159

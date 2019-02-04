@@ -18,15 +18,15 @@ public class EpisodeWatch {
     private Date watchDate;
 
     private String comment;
-    private int nota;
-    private String fonte;
+    private int punctuation;
+    private String watchSource;
 
     public EpisodeWatch() {}
 
-    public EpisodeWatch(String comment, int nota, String fonte) {
+    public EpisodeWatch(String comment, int punctuation, String watchSource) {
         this.comment = comment;
-        this.nota = nota;
-        this.fonte = fonte;
+        this.punctuation = punctuation;
+        this.watchSource = watchSource;
     }
 
     public EpisodeWatchKey getEpisodeWatchKey() {
@@ -53,19 +53,19 @@ public class EpisodeWatch {
         this.comment = comment;
     }
 
-    public int getNota() {
-        return nota;
+    public int getpunctuation() {
+        return punctuation;
     }
 
-    public void setNota(int nota) {
-        this.nota = nota;
+    public void setpunctuation(int punctuation) {
+        this.punctuation = punctuation;
     }
 
-    public String getFonte() {
-        return fonte;
+    public String getwatchSource() {
+        return watchSource;
     }
 
-    public void setFonte(String fonte) {
-        this.fonte = fonte;
+    public void setwatchSource(String watchSource) {
+        this.watchSource = watchSource;
     }
 }

@@ -104,4 +104,8 @@ public class Episode {
     public Anime anime(){
         return this.anime;
     }
+
+    public void watch(EpisodeWatch episodeWatch){
+        this.numberViews++;
+    }
 }

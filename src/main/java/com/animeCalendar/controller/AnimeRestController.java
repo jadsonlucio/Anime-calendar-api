@@ -7,6 +7,7 @@ import com.animeCalendar.models.Anime;
 import com.animeCalendar.models.Episode;
 import com.animeCalendar.models.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -34,11 +35,8 @@ public class AnimeRestController {
     }
 
     @GetMapping("/anime/{id}")
-    @ResponseBody
-    public Anime getAnime(@PathVariable int id){
-        Anime anime = animeDatabase.getOne(id);
-        System.out.println(anime.getName());
-        return animeDatabase.getOne(id);
+    public Optional<Anime> getAnime(@PathVariable int id){
+        return animeDatabase.findById(id);
     }
 
     @PostMapping("/anime/save")
@@ -62,6 +60,7 @@ public class AnimeRestController {
 
         return ResponseEntity.created(uri).body("Episode of anime" + anime.getName() + " saved with id of:" + savedEpisode.getId());
     }
+
 
 
     /** Data manipulation methods **/

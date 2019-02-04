@@ -32,10 +32,6 @@ public class EpisodeWatchKey implements Serializable {
         this.episode = episode;
     }
 
-    public AnimeWatch getAnimeWatch() {
-        return animeWatch;
-    }
-
     public void setAnimeWatch(AnimeWatch animeWatch) {
         this.animeWatch = animeWatch;
     }
