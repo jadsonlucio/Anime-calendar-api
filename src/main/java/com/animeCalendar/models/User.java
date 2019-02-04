@@ -3,12 +3,16 @@ package com.animeCalendar.models;
 import javax.persistence.*;
 import java.time.Instant;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<AnimeWatch> animesWatched;
 
     private String name;
     private String email;
@@ -70,4 +74,12 @@ public class User {
     public Date getCreatedDate(){ return this.createdDate; }
 
     private void setCreatedDate(Date createdDate){ this.createdDate = createdDate; }
+
+    public List<AnimeWatch> getAnimesWatched() {
+        return animesWatched;
+    }
+
+    public void setAnimesWatched(List<AnimeWatch> animesWatched) {
+        this.animesWatched = animesWatched;
+    }
 }
