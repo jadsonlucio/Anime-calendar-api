@@ -1,6 +1,6 @@
 #FileLock
-#Sun Jan 27 19:52:11 BRT 2019
-server=192.168.0.103\:59240
-hostName=jadson-PC
+#Mon Feb 04 13:36:31 BRT 2019
+hostName=ara-compaq8100
+id=168b9483eff1a5f1ea165b04ea1301be6feb65db944
 method=file
-id=168918358c41cdef9465b60f66154a2018ce7268c26
+server=127.0.1.1\:36159
